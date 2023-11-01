@@ -7,6 +7,9 @@ import ContainerPostLogin from './screens/ContainerPostLogin';
 import ContainerCerrar from './screens/ContainerCerrar';
 import ContainerPostRegistro from './screens/ContainerPostRegistro';
 import ContainerGetCines from './screens/ContainerGetCines';
+import ContainerGetPeliculas from './screens/ContainerGetPeliculas';
+import ContainerGetEstrenos from './screens/ContainerGetEstrenos';
+import ContainerGetPelisCine from './screens/ContainerGetPelisCine';
 
 function App() {
   return (
@@ -17,8 +20,11 @@ function App() {
             <Route index element={<Home />}></Route>                                                {/*ocupa el <Outlet />*/}
             <Route path="/abrir" element={<ContainerPostLogin />}></Route>                          {/*ocupa el <Outlet />*/}
             <Route path="/cerrar" element={<ContainerCerrar />}></Route>                          {/*ocupa el <Outlet />*/}
-            <Route path="/registro" element={<ContainerPostRegistro />}></Route>                    {/*ocupa el <Outlet />*/}
-            <Route path="/cines-pelis-estrenos" element={<ContainerGetCines />}></Route>                    {/*ocupa el <Outlet />*/}
+            <Route path="/registro" element={<ContainerPostRegistro />}></Route>                  {/*ocupa el <Outlet />*/}
+            <Route path="/cines-pelis-estrenos" element={<ContainerGetCines />}></Route>          {/*ocupa el <Outlet />*/}
+            <Route path="/peliculas" element={<ContainerGetPeliculas />}></Route>          {/*ocupa el <Outlet />*/}
+            <Route path="/estrenos" element={<ContainerGetEstrenos />}></Route>          {/*ocupa el <Outlet />*/}
+            <Route path="/cine/:parametro_id_cine/:parametro_nombre_cine" element={<ContainerGetPelisCine />}></Route>          {/*ocupa el <Outlet />*/}
             
           </Route>{/*fin path="/">*/}
         </Routes>

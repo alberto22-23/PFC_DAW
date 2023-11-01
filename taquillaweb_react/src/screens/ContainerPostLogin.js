@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 //Estilos
 import "../styles/estilosTW.css";
 
-/////////////////////// FUNCIONA CORRECTAMENTE /////////////////////////////////
+/////////////////////// FUNCIONA CORRECTAMENTE ///////////////////////
 const ContainerPostLogin = () => {
 
 
@@ -15,9 +15,9 @@ const ContainerPostLogin = () => {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [response, setResponse] = useState('');
-  const [operable, setOperable] = useState(false);
+  const [linkoperable, setLinkOperable] = useState(false);
 
-  //Manejador del submit
+  /////////////////////// Manejador del submit ///////////////////////
   const handleSubmit = async (event) => {
     event.preventDefault(); //evitamos el comportamiento por defecto del botón
 
@@ -42,12 +42,14 @@ const ContainerPostLogin = () => {
           //Si la respuesta del servidor tiene el campo "status" aparece "response" en pantalla
           setResponse(JSON.stringify(response.data.status)); //('Respuesta: ' + JSON.stringify(response.data.status))
           console.log('Respuesta:', response.data);
+
           // y guardamos el valor del campo "token" en sessionStorage
           sessionStorage.setItem('token', response.data.data.token);
           const tokenUsuActual = sessionStorage.getItem('token');
           console.log('Token actual:', tokenUsuActual);
+
           //habilitamos el Link Explorar
-          setOperable(true);
+          setLinkOperable(true);
         }
         if(response.status === 400){
           setResponse(JSON.stringify(response.data));
@@ -60,7 +62,7 @@ const ContainerPostLogin = () => {
         // Puedes manejar los errores aquí
       });
   }
-
+  /////////////////////// Fin Manejador del submit ///////////////////////
   return (
     <div className='container-login'>
       <form className='campos' onSubmit={handleSubmit}>
@@ -84,11 +86,10 @@ const ContainerPostLogin = () => {
         <strong>{response}</strong>
       </div>
 
-      <Link to="/cines-pelis-estrenos" className="btn-explorar" style={{ pointerEvents: operable ? '' : 'none' }}>Explorar</Link>
+      <Link to="/" className="btn-explorar" style={{ visibility: linkoperable ? 'visible' : 'hidden' }}>Explorar</Link>
     </div>
   );
 }
-
 
 export default ContainerPostLogin;
 

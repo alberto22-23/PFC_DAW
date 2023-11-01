@@ -4,7 +4,9 @@
 
 body {
     /*background-color: rgb(195, 212, 201);*/
-    background-color: rgb(236, 236, 224);
+    /*background-color: rgb(236, 236, 224);/*bueno*/
+    /*background-color: rgb(193,205,205);*/
+    background-color: Ivory;
     color: darkblue;
     font-family: sans-serif;
     font-size: 20px;
@@ -12,7 +14,7 @@ body {
 }
 
 /*--------------------------HEADER----------------------------------------*/
-/*Cabecera (cotenedor)*/
+/*Cabecera (contenedor)*/
 .header {
     /*Dimensiones*/
     padding: 10px;
@@ -29,23 +31,16 @@ body {
     /*Forma*/
     border-radius: 10px;
     /*Sombra efecto neón*/
-    box-shadow: 0px 0px 10px darkblue;
+    box-shadow: 0px 0px 10px sienna;
     /*font-size: 20px;*/
 }
 
 /*--------------------------------------------------------------------------------------*/
 
-/*Logo de la página (transparencia)*/
-.img-product {
-    padding: 0px;
-    height: auto;
-    width: 200px;
-}
-
 /*Logo de la página*/
 .imagen-logo {
     height: auto;
-    width: 280px;
+    width: 250px;
 }
 
 /*--------------------------------------------------------------------------------------*/
@@ -54,33 +49,44 @@ body {
 .elemHeader {
     display: flex;
     /*color: black;*/
-    padding: 3px;
+    padding: 4px;
     /*height: 25%;*/
     /*width: 20%;*/
     height: 100%;
     text-align: center;
 }
 
-/*Enlace de la lista*/
 .enlace {
     text-decoration: none;
     display: block;
-    padding: 4%;
-    width: 250px;
+    padding: 5px;
+    /*width: 250px;*/
     /*Sombra efecto neón*/
-    box-shadow: 0px 0px 10px darkblue;
+    box-shadow: 0px 0px 10px darkgreen;
     color: darkblue;
-
 }
 
-/*Efectos aplicados al deslizar el cursor sobre los elementos de la lista*/
 .enlace:hover {
     background-color: lightgreen;
     color: darkblue;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
-/*----------------------------------------FIN HEADER---------------------------------------------*/
+/*--------------------- DIFERENTES ANCHOS PARA DIFERENTES ENLACES -------------------------------*/
+.ancho250x40px {
+    width: 250px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.ancho20x100 {
+    width: 20%;
+}
+
+/*---------------------------------------- FIN HEADER ---------------------------------------------*/
+
+/*---------------------------------------- PRESENTACIÓN INICIO ---------------------------------------------*/
 
 .presentacion {
     display: flex;
@@ -88,10 +94,11 @@ body {
     flex-wrap: wrap;
     align-items: center;
     border-radius: 10px;
-    background-color: white;
+    /*background-color: white;*/
     /*Sombra efecto neón*/
-    box-shadow: 0px 0px 10px darkblue;
-    font-size: 20px;
+    /*box-shadow: 0px 0px 10px sienna;*/
+    font-size: 21px;
+    text-align: left;
     /*Dimensiones*/
     padding: 1%;
     padding-left: 9%;
@@ -107,15 +114,57 @@ h1 {
     /*justify-content: center;*/
 }
 
+.p-bienvenida {
+    font-weight: bold;
+    font-size: 25px;
+    color: firebrick;
+    padding: 5px 15px 5px 15px;
+    /*superior derecha abajo izquierda*/
+    background-color: bisque;
+}
+
+/*------------ enlace-a-pelis-estrenos para links en caja-links: Ver todas películas y Ver estrenos ------------*/
+
+.enlace-a-pelis-estrenos {
+    padding: 15px 10px 15px 10px;
+    /*superior derecha abajo izquierda*/
+    width: 260px;
+    border-radius: 28px;
+    /*sup-izquierda sup-derecha inf-derecha inf-izquierda*/
+    background-color: lightyellow;
+    /*visibility: hidden;*/
+}
+
+.enlace-sesion {
+    background-color: lightyellow;
+    margin: 0px 10px 0px 10px;
+    /*superior derecha abajo izquierda*/
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.div-abrir-cerrar {
+    display: flex;
+    flex-direction: row;
+}
+
 /*--------------------------------- CONTAINERS -----------------------------------------------------*/
+.caja-logo-descripcion,
+.caja-sesion,
+.caja-indicaciones,
 .container-login,
 .container-cerrar,
 .container-registro,
+.caja-links-cines,
+.caja-links,
 .container-cines,
-.container-extra {
+.caja-volver-peliculas,
+.caja-volver,
+.container-peliculas,
+.container-peliculas-cine {
     /*width: 33,33%;*/
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     width: 97%;
@@ -126,16 +175,72 @@ h1 {
     margin-bottom: 10px;
     text-align: center;
     /*border-width: 1px;*/
-    /*background-color: lightcyan;*/
+    /*background-color: rgb(236, 236, 224);*/
     /*Forma*/
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     /*Sombra efecto neón*/
-    box-shadow: 0px 0px 10px darkblue;
+    box-shadow: 0px 0px 10px sienna;
 }
+
+.caja-sesion {
+    /*border-radius: 35px 35px;*/
+    border-radius: 0px;
+    /*background-color: rgb(193,205,205);*/
+    /*background-color: paleturquoise;*/
+    box-shadow: none;
+    justify-content: space-between;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+.caja-links,
+.caja-volver,
+.caja-logo-descripcion {
+    background: linear-gradient(Ivory, AntiqueWhite);
+    border-radius: 0px;
+    align-items: center;
+    width: 97%;
+    height: 100px;
+    justify-content: space-around;
+    border-style: solid none solid none;
+    /*superior derecha abajo izquierda*/
+    border-width: 1px;
+    border-color: goldenrod;
+    box-shadow: none;
+    /*color: BlueViolet;*/
+    font-size: 22px;
+}
+
+.caja-indicaciones {
+    /*background-color: rgb(224,255,255);*/
+    box-shadow: none;
+}
+
+.h3-indicaciones {
+    margin: auto;
+}
+
+.container-cines,
+.container-peliculas,
+.container-peliculas-cine {
+    box-shadow: none;
+    background: linear-gradient(AntiqueWhite, AntiqueWhite);
+}
+
+.container-peliculas {
+    flex-direction: column;
+}
+
+/*
+background: linear-gradient(90deg, rgba(79,116,115,1) 0%, rgba(244,244,237,1) 25%, rgba(255,255,255,1) 45%, 
+      rgba(255,255,255,1) 55%, rgba(244,244,237,1) 75%, rgba(79,116,115,1) 100%);
+background-color: #f4f4ed;
+*/
+
 
 /*-------------------------- REGISTRO ----------------------------------------*/
 
-.form-titulo{
+.form-titulo {
     text-align: center;
 }
 
@@ -156,14 +261,14 @@ h1 {
     margin-bottom: 10px;
     width: 33%;
     color: white;
-    
+
     /*border-style: solid;*/
     border-radius: 50px;
     border-width: 2px;
     /*Sombra efecto neón*/
-    box-shadow: 0px 0px 10px darkblue;
+    box-shadow: 0px 0px 10px sienna;
     color: darkblue;
-    
+
     text-align: center;
     font-size: 20px;
 }
@@ -178,35 +283,37 @@ label {
     margin-top: 15px;
     font-weight: bold;
 }
+
 /*-----------------Imputs datos-----------------*/
 .largo {
     float: left;
     width: 80%;
 }
 
-#respuesta-servidor{
+#respuesta-servidor {
     margin-top: 15px;
     margin-bottom: 15px;
-    background-color: rgb(236, 236, 224);
+    /*background-color: rgb(236, 236, 224);*/
     /*border-style: dotted;*/
     font-family: sans-serif;
     font-size: 24px;
-    color:darkgreen;
+    color: darkgreen;
     height: 25px;
 }
+
 /*-----------------Ancho boton pequeño-----------------*/
 .medio {
     width: 200px;
 }
 
-/*-----------------Botón Entrar y Registar-----------------*/
+/*-----------------Link Entrar y Link Registar-----------------*/
 .btn-entrar-registrar {
     margin-top: 40px;
     margin-bottom: 20px;
     padding: 1%;
     /*Sombra efecto neón*/
     border-style: none;
-    box-shadow: 0px 0px 10px darkblue;
+    box-shadow: 0px 0px 10px darkgreen;
     font-size: 22px;
     color: darkblue;
 }
@@ -240,11 +347,12 @@ label {
     padding: 1%;
     border-style: none;
     /*Sombra efecto neón*/
-    box-shadow: 0px 0px 10px darkblue;
+    box-shadow: 0px 0px 10px darkgreen;
     font-size: 22px;
     color: darkblue;
     width: 33%;
     text-decoration: none;
+    text-align: center;
 }
 
 .btn-explorar:hover {
@@ -253,96 +361,190 @@ label {
     font-weight: bold;
 }
 
-/*--------------------------CardCine----------------------------------------*/
+/*-------------------------- FIN REGISTRO ----------------------------------------*/
 
-.cardcine,
-.carduser {
+
+
+/*-------------------------- CARDCINE ----------------------------------------*/
+
+.cardcine {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 25%;
+    width: 400px;
     margin: 5px;
     border-style: outset;
     border-color: lightsteelblue;
     border-width: 4px;
     /*background-color: wheat;*/
-    background-color: lightcyan;
-    border-radius: 10px;
+    /*background-color: lightcyan;*/
+    background-color: Moccasin;
+    border-radius: 20px;
     /*text*/
     font-weight: bold;
     font-size: 20px;
     padding: 10px;
 }
 
-.div-id {
-    font-size: 15px;
-    margin: 3px;
-}
-
-.div-categ {
-    height: 5%;
-    font-size: 20px;
-    margin: 3px;
-    background-color: lightcyan;
-    width: 90%;
-    border-radius: 15px 15px;
-}
-
-.div-img {
-    height: 60%;
+/*-------------- Imagen cine -------------------------------*/
+.img-cine {
+    /*border-style: solid;*/
     margin: 3px;
     /*display: flex;*/
     padding-top: 20px;
 }
 
-.div-nombre-cine {
-    height: 10%;
-    font-size: 18px;
-    overflow: hidden;
+.ancho97por100 {
+    width: 97%;
+    padding: 15px;
+}
+
+.alto {
+    height: 50px;
+}
+
+/*-------------- Fin imagen cine----------------------------*/
+
+/*-------------------------- DIVS EN CARDCINE ----------------------------------------*/
+
+.div-id-cine {
+    font-size: 15px;
     margin: 3px;
 }
 
-.div-precio {
-    height: 10%;
-    font-size: 20px;
+.div-nombre-cine {
+    height: 5%;
+    padding: 5px;
+    font-size: 22px;
     margin: 3px;
-    color: darkred;
+    background-color: lightcyan;
+    width: 95%;
+    border-radius: 15px 15px;
+}
+
+.div-cantsalas-cine {
+    height: 10%;
+    padding: 5px;
+    font-size: 20px;
+    margin: 20px;
+    background-color: PowderBlue;
+    width: 95%;
+    color: inherit;
 }
 
 .div-link {
     width: 95%;
-    font-size: 18px;
+    font-size: inherit;
+    /*hereda de body*/
     display: flex;
     flex-direction: column;
     /*flex-wrap: wrap;*/
     align-items: center;
     justify-content: center;
+    /*margin: 20px;*/
+    margin-bottom: 10px;
 }
 
-.div-link-categ {
-    font-size: 18px;
+.ancho97x100 {
+    width: 97%;
+}
+
+/*--------------------------CardPelicula CarPeliculaPorcine----------------------------------------*/
+
+.cardpelicula,
+.cardpeliculaporcine {
     display: flex;
-    flex-direction: column;
-    /*flex-wrap: wrap;*/
+    flex-direction: row;
     align-items: center;
-    margin-top: 15px;
+    /*justify-content: space-between;*/
+    width: 80%;
+    margin: 5px;
+    border-style: outset;
+    border-color: lightsteelblue;
+    border-width: 4px;
+    /*background-color: wheat;*/
+    /*background-color: lightcyan;*/
+    background-color: Moccasin;
+    border-radius: 10px;
+    /*text*/
+    /*font-weight: bold;*/
+    font-size: 20px;
+    padding: 10px;
+}
+
+.cardpeliculaporcine {
+    width: 550px;
+}
+
+/*------------- Imagen película --------------*/
+.img-pelicula {
+    height: 350px;
+}
+
+.datos-pelicula {
+    width: 90%;
+    height: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.div-nombre-pelicula,
+.div-sinopsis-pelicula,
+.div-salas-pelicula,
+.div-precio-pelicula {
+    /*height: 10%;*/
+    padding: 5px;
+    font-size: 22px;
+    /*margin: 3px;*/
+    background-color: lightcyan;
+    width: 95%;
+    border-radius: 15px 15px;
+    font-weight: bold;
+    /*color: darkgreen;*/
+}
+
+.div-sinopsis-pelicula {
+    /*text-align: center;*/
+    background-color: lavender;
+    color: black;
+    /*margin: 7px;*/
+    font-size: 21px;
+}
+
+.div-salas-pelicula {
+    /*text-align: center;*/
+    background-color: PowderBlue;
+    color: black;
+    /*margin: 7px;*/
+    font-size: 21px;
+}
+
+.div-precio-pelicula {
+    background-color: whitesmoke;
+    color: darkred;
+    /*margin-bottom: 50px;*/
 }
 
 /*--------------------------footer----------------------------------------*/
 
 .footer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     width: 97%;
     /*align-items: center;*/
     /*justify-content: center;*/
-    padding: 10px;
+    padding: 15px;
     margin: 5px;
     margin-top: 10px;
     text-align: center;
-    box-shadow: 0px 0px 10px darkblue;
+    box-shadow: 0px 0px 10px sienna;
     border-radius: 10px;
     /*Posición*/
     margin: auto;
@@ -350,4 +552,34 @@ label {
     margin-bottom: 1%;
     /*Fuente*/
     color: darkblue
+}
+
+.footer-politicas,
+.footer-div-logo,
+.footer-redes-1 {
+    width: 33%;
+}
+
+.footer-politicas {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.footer-div-logo {
+    border-right-style: solid;
+    border-left-style: solid;
+    border-width: 1px;
+}
+
+.footer-imagen-logo {
+    height: auto;
+    width: 180px;
+
+}
+
+.imagen-redes {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
 }

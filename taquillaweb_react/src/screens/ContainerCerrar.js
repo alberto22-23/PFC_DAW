@@ -10,7 +10,9 @@ import "../styles/estilosTW.css";
 /////////////////////// FUNCIONA CORRECTAMENTE /////////////////////////////////
 const ContainerCerrar = () => {
 
-
+    const tokenUsuActual = sessionStorage.getItem('token');
+    console.log('Token actual:' + tokenUsuActual);
+    sessionStorage.setItem('token', 'Sesión cerrada');
 
     return (
         <div className='container-cerrar'>
@@ -24,6 +26,5 @@ const ContainerCerrar = () => {
         </div>
     );
 }
-
 
 export default ContainerCerrar;
