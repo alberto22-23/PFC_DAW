@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 //Estilos
 import "../styles/estilosTW.css";
-import logo_TW from "../figuras/logoTW.jpg";
+import logo_TW from "../figuras/logoTW_1000x500.jpg";
 import facebook_icon from "../figuras/facebook.png";
 import twitter_icon from "../figuras/gorjeo.png";
 import instagram_icon from "../figuras/instagram.png";

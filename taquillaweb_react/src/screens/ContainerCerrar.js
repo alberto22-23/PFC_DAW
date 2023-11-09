@@ -6,23 +6,29 @@ import { useEffect, useState } from "react";
 
 //Estilos
 import "../styles/estilosTW.css";
+//Imágenes
+import esquema from "../figuras/patio_butacas_antiguo.jpg"
 
-/////////////////////// FUNCIONA CORRECTAMENTE /////////////////////////////////
+///////////////////////// FUNCIONA CORRECTAMENTE /////////////////////////////////
 const ContainerCerrar = () => {
 
-    const tokenUsuActual = sessionStorage.getItem('token');
-    console.log('Token actual:' + tokenUsuActual);
-    sessionStorage.setItem('token', 'Sesión cerrada');
+    //Comprobamos valor actual del token:
+    var tokenUsuActual = sessionStorage.getItem('token');
+    console.log('Token actual en cerrar 1: ' + tokenUsuActual);
+
+    sessionStorage.setItem('token', "Cerrada"); //con null no funciona
+
+    tokenUsuActual = sessionStorage.getItem('token');
+    console.log('Token actual en cerrar 2: ' + tokenUsuActual);
 
     return (
         <div className='container-cerrar'>
-
-            <div className="form-titulo">
                 <h3><strong>Se ha cerrado la sesión.</strong></h3>
+                <h3 className='h3-indicaciones'><strong>¡Hasta la próxima!</strong></h3>
+                <br></br>
                 <Link to="/" className="enlace-reg-log">Link a Inicio</Link>
-            </div>
-
-
+                <img src={esquema} alt="logo" title="Cine Capitol" className="imagen-esquema-relacional" />
+                <br></br>
         </div>
     );
 }

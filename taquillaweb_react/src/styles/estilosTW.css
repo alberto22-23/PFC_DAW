@@ -10,6 +10,7 @@ body {
     color: darkblue;
     font-family: sans-serif;
     font-size: 20px;
+    zoom: 80%;
 
 }
 
@@ -23,13 +24,14 @@ body {
     /*Posición*/
     margin: auto;
     margin-top: 1%;
+    margin-bottom: 1%;
     /*Reglas del contenido*/
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
     /*Forma*/
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     /*Sombra efecto neón*/
     box-shadow: 0px 0px 10px sienna;
     /*font-size: 20px;*/
@@ -40,7 +42,19 @@ body {
 /*Logo de la página*/
 .imagen-logo {
     height: auto;
-    width: 250px;
+    width: 300px;
+    margin: 20px;
+    border-radius: 20px;
+    border: 10px solid burlywood ; /*borde global: width style color ó style width color*/
+}
+
+.imagen-esquema-relacional{
+    height: auto;
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px;
+    border: 3px solid burlywood
+
 }
 
 /*--------------------------------------------------------------------------------------*/
@@ -59,17 +73,22 @@ body {
 .enlace {
     text-decoration: none;
     display: block;
-    padding: 5px;
+    padding: 10px;
     /*width: 250px;*/
     /*Sombra efecto neón*/
+    background-color: lightyellow;
     box-shadow: 0px 0px 10px darkgreen;
     color: darkblue;
+    border-radius: 25px;
+    font-weight: bold;
 }
 
-.enlace:hover {
-    background-color: lightgreen;
+/*---------------------------:hover para los enlaces ----------------------------*/
+
+.enlace:hover, .imagen-logo:hover, .footer-imagen-logo:hover {
+    background-color: springgreen;
     color: darkblue;
-    /*font-weight: bold;*/
+    box-shadow: 0px 0px 20px darkgreen;
 }
 
 /*--------------------- DIFERENTES ANCHOS PARA DIFERENTES ENLACES -------------------------------*/
@@ -78,6 +97,7 @@ body {
     height: 40px;
     padding: 10px;
     border-radius: 20px;
+    text-align: center;
 }
 
 .ancho20x100 {
@@ -118,7 +138,7 @@ h1 {
     font-weight: bold;
     font-size: 25px;
     color: firebrick;
-    padding: 5px 15px 5px 15px;
+    padding: 10px 20px 10px 20px;
     /*superior derecha abajo izquierda*/
     background-color: bisque;
 }
@@ -128,17 +148,16 @@ h1 {
 .enlace-a-pelis-estrenos {
     padding: 15px 10px 15px 10px;
     /*superior derecha abajo izquierda*/
-    width: 260px;
+    width: 270px;
     border-radius: 28px;
+    margin: 10px;
     /*sup-izquierda sup-derecha inf-derecha inf-izquierda*/
     background-color: lightyellow;
     /*visibility: hidden;*/
 }
 
 .enlace-sesion {
-    background-color: lightyellow;
-    margin: 0px 10px 0px 10px;
-    /*superior derecha abajo izquierda*/
+    background-color: lightyellow; /*margin: 0px 10px 0px 10px; /*superior derecha abajo izquierda*/
     padding: 10px;
     border-radius: 25px;
 }
@@ -161,7 +180,7 @@ h1 {
 .caja-volver-peliculas,
 .caja-volver,
 .container-peliculas,
-.container-peliculas-cine {
+.container-peliculas-cine{
     /*width: 33,33%;*/
     display: flex;
     flex-direction: row;
@@ -196,14 +215,13 @@ h1 {
 .caja-links,
 .caja-volver,
 .caja-logo-descripcion {
-    background: linear-gradient(Ivory, AntiqueWhite);
+    background: linear-gradient(linen 0%, AntiqueWhite 25%, AntiqueWhite 75%, burlywood 100%);
     border-radius: 0px;
     align-items: center;
     width: 97%;
     height: 100px;
     justify-content: space-around;
-    border-style: solid none solid none;
-    /*superior derecha abajo izquierda*/
+    border-style: none none solid none; /*superior derecha abajo izquierda*/
     border-width: 1px;
     border-color: goldenrod;
     box-shadow: none;
@@ -214,6 +232,8 @@ h1 {
 .caja-indicaciones {
     /*background-color: rgb(224,255,255);*/
     box-shadow: none;
+    flex-direction: column;
+    font-size: 22px;
 }
 
 .h3-indicaciones {
@@ -224,12 +244,17 @@ h1 {
 .container-peliculas,
 .container-peliculas-cine {
     box-shadow: none;
-    background: linear-gradient(AntiqueWhite, AntiqueWhite);
+    background: linear-gradient(burlywood 0%, AntiqueWhite 25%, AntiqueWhite 75%, burlywood 100%);
+    border-style: solid none solid none;
+    /*superior derecha abajo izquierda*/
+    border-width: 1px;
+    border-color: goldenrod;
 }
 
-.container-peliculas {
+.container-peliculas, .container-cerrar {
     flex-direction: column;
 }
+
 
 /*
 background: linear-gradient(90deg, rgba(79,116,115,1) 0%, rgba(244,244,237,1) 25%, rgba(255,255,255,1) 45%, 
@@ -257,7 +282,7 @@ background-color: #f4f4ed;
 
 .campos {
     margin: auto;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 10px;
     width: 33%;
     color: white;
@@ -271,6 +296,10 @@ background-color: #f4f4ed;
 
     text-align: center;
     font-size: 20px;
+}
+
+.campoBusqueda{
+    width: 65%;
 }
 
 input {
@@ -375,7 +404,7 @@ label {
     width: 400px;
     margin: 5px;
     border-style: outset;
-    border-color: lightsteelblue;
+    border-color: goldenrod;
     border-width: 4px;
     /*background-color: wheat;*/
     /*background-color: lightcyan;*/
@@ -421,6 +450,7 @@ label {
     background-color: lightcyan;
     width: 95%;
     border-radius: 15px 15px;
+    text-align: center;
 }
 
 .div-cantsalas-cine {
@@ -444,6 +474,7 @@ label {
     justify-content: center;
     /*margin: 20px;*/
     margin-bottom: 10px;
+
 }
 
 .ancho97x100 {
@@ -461,12 +492,12 @@ label {
     width: 80%;
     margin: 5px;
     border-style: outset;
-    border-color: lightsteelblue;
+    border-color: goldenrod;
     border-width: 4px;
     /*background-color: wheat;*/
     /*background-color: lightcyan;*/
     background-color: Moccasin;
-    border-radius: 10px;
+    border-radius: 20px;
     /*text*/
     /*font-weight: bold;*/
     font-size: 20px;
@@ -490,6 +521,7 @@ label {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    margin-left: 10px;
 }
 
 .div-nombre-pelicula,
@@ -509,7 +541,7 @@ label {
 
 .div-sinopsis-pelicula {
     /*text-align: center;*/
-    background-color: lavender;
+    background-color: azure;
     color: black;
     /*margin: 7px;*/
     font-size: 21px;
@@ -524,7 +556,7 @@ label {
 }
 
 .div-precio-pelicula {
-    background-color: whitesmoke;
+    background-color: mintcream;
     color: darkred;
     /*margin-bottom: 50px;*/
 }
@@ -533,19 +565,17 @@ label {
 
 .footer {
     display: flex;
-    flex-direction: row;
+    /*flex-direction: row;*/
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
     width: 97%;
-    /*align-items: center;*/
-    /*justify-content: center;*/
     padding: 15px;
     margin: 5px;
     margin-top: 10px;
     text-align: center;
     box-shadow: 0px 0px 10px sienna;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     /*Posición*/
     margin: auto;
     margin-top: 1%;
@@ -564,22 +594,99 @@ label {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    padding: 3px;
 }
 
 .footer-div-logo {
     border-right-style: solid;
     border-left-style: solid;
     border-width: 1px;
+    padding: 3px;
 }
 
 .footer-imagen-logo {
     height: auto;
     width: 180px;
-
+    border-radius: 15px;
+    border: 7px solid burlywood ; /*borde global: width style color ó style width color*/
+    margin-bottom: 20px;
 }
 
 .imagen-redes {
     width: 50px;
     height: 50px;
     margin: 10px;
+    padding: 3px;
+}
+
+/******************************* DISEÑO RESPONSIVE **********************************/
+
+@media screen and (max-width: 1200px) {
+    .caja-sesion {
+        flex-direction: column;
+        justify-content: space-around;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    /*Para width mayor de 900 cambia a las iniciales*/
+    /*Valores para width entre 1000 (incluido) y 800 (no incluido)*/
+    .cardpelicula,
+    .cardpeliculaporcine {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .datos-pelicula {
+        width: 90%;
+        height: auto;
+        /*le doy altura para poder aplicarle space-evenly*/
+        border: 1px solid goldenrod;
+        /*borde global: width style color ó style width color*/
+        margin-top: 10px;
+        border-radius: 20px;
+    }
+
+    .div-nombre-pelicula,
+    .div-sinopsis-pelicula,
+    .div-salas-pelicula,
+    .div-precio-pelicula {
+        margin: 10px;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+
+    /*Valores para width entre 750 (incluido) y 600 (no incluido)*/
+    .footer {
+        flex-direction: column;
+    }
+
+    .footer-politicas,
+    .footer-div-logo,
+    .footer-redes-1 {
+        width: 90%;
+    }
+
+    .footer-div-logo {
+        border-style: solid none solid none;
+        /*superior derecha abajo izquierda*/
+        margin: 25px;
+        padding: 15px;
+    }
+
+    .header,
+    .caja-links,
+    .caja-volver,
+    .caja-logo-descripcion,
+    .caja-sesion {
+        flex-direction: column;
+        justify-content: space-around;
+        height: auto;
+    }
+
+
 }
