@@ -81,14 +81,37 @@ def login_view(request):
         pemail = json_request['email']  # cogemos el email
         ppassword = json_request['password']  # cogemos la clave
 
-        if not all([pusuarionombre, ppassword, pemail]):  # si no están todos los campos, error del cliente
-            return HttpResponse("Hay campos sin cubrir", status=400)
+        if not all([ppassword, pemail]):  # si no están todos los campos, error del cliente # corregido 20231111 quitado: pusuarionombre,
+            # corregido 20231111
+            data = {
+                "status": "Hay campos sin cubrir, status=400"
+            }
+            return JsonResponse(data, safe = False, json_dumps_params = {'ensure_ascii':False})
 
         try:  # si el email es diferente a los emails que hay en la BD el usuario no existe
             usuario = Tusuarios.objects.get(email=pemail)
             
         except Tusuarios.DoesNotExist:
-            return HttpResponse("El email no está registrado", status=400)
+             # corregido 20231111
+            data = {
+                "status": "El email no está registrado, status=400"
+            }
+            return JsonResponse(data, safe = False, json_dumps_params = {'ensure_ascii':False})
+        
+        # -------- try añadido 20231111---------
+        
+        # try:  # si la contraseña encriptada es diferente a las contraseñas encriptadas que hay en la BD el usuario no existe
+            # encriptada = usuario.set_password(ppassword)
+            # usuario = Tusuarios.objects.get(password = encriptada)
+            
+        # except Tusuarios.DoesNotExist:
+             # corregido 20231111
+            # data = {
+                # "status": "La contraseña es incorrecta, status=400"
+            # }
+           #  return JsonResponse(data, safe = False, json_dumps_params = {'ensure_ascii':False})
+        
+        # -------- fin try añadido 20231111---------
         
         # Validamos la contraseña (no definimos el método check_password() en el modelo (clase) Tusuarios, lo importamos)
         if check_password(ppassword, usuario.password):
@@ -572,7 +595,7 @@ def borrado_registros_tentradas(request):
         try:  # si el token es diferente a los tokens que hay en la BD el usuario no está introduciento el token correcto
             usuario = Tusuarios.objects.get(token = authorization_header)
             nombre_permitido = usuario.usuarionombre
-            if nombre_permitido != "Administrador":
+            if nombre_permitido != "Administrador TW":
                 return HttpResponse("Operación no permitida.", status=400)
             else:
                 pass
