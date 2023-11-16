@@ -108,7 +108,7 @@ body {
 
 /*---------------------------------------- PRESENTACIÓN INICIO ---------------------------------------------*/
 
-.presentacion, .p-bienvenida {
+.presentacion, .p-bienvenida, .caja-indicaciones {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -143,7 +143,7 @@ h1 {
     margin-bottom: auto;
 }
 
-.p-bienvenida {
+.p-bienvenida, .caja-indicaciones {
     font-weight: bold;
     font-size: 25px;
     color: firebrick;
@@ -243,13 +243,18 @@ h1 {
 
 .caja-indicaciones {
     /*background-color: rgb(224,255,255);*/
+    /*background-color: rgb(193,255,193);*/
+    color: inherit;
     box-shadow: none;
     flex-direction: column;
     font-size: 22px;
+    font-weight: normal;
+    background-color: rgb(224,255,255);
 }
 
 .h3-indicaciones {
     margin: auto;
+    
 }
 
 .container-cines,
@@ -497,7 +502,8 @@ label {
 /*--------------------------CardPelicula CarPeliculaPorcine----------------------------------------*/
 
 .cardpelicula,
-.cardpeliculaporcine {
+.cardpeliculaporcine,
+.card-compra-entrada {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -526,7 +532,7 @@ label {
     height: 350px;
 }
 
-.datos-pelicula {
+.datos-pelicula, .datos-compra-entrada {
     width: 90%;
     height: 350px;
     display: flex;
@@ -535,6 +541,13 @@ label {
     align-items: center;
     justify-content: space-evenly;
     margin-left: 10px;
+}
+
+.datos-compra-entrada{
+    height: auto;
+    background-color: ivory;
+    padding: 15px;
+    border-radius: 20px;
 }
 
 .div-nombre-pelicula,
@@ -570,8 +583,32 @@ label {
 
 .div-precio-pelicula {
     background-color: mintcream;
-    color: darkred;
+    color: firebrick;
     /*margin-bottom: 50px;*/
+}
+
+.info-compra{ /*Modifica los divs anteriores dentro de .datos-compra-entrada*/
+    margin: 5px;
+    width: 95%;
+    background-color: ivory;
+    /*padding: 3px;*/
+    /*border-style: none none solid none;*/
+    /*superior derecha abajo izquierda*/
+    /*border-width: 1px;
+    border-color: goldenrod;
+    border-radius: 0%;*/
+}
+
+/*--------------------------------- compra entradas -----------------------------------*/
+
+.select-sesiones{
+    width: 320px;
+    height: 40px;
+    font-size: 22px;
+    padding: 7px;
+    text-align: center;
+    /*margin: 15px;*/
+
 }
 
 /*--------------------------------- footer -----------------------------------*/

@@ -70,10 +70,11 @@ const ContainerGetCines = () => {
 
     return (
         <div className="caja-links-cines">
+
+            {/****************************** Inicio Barra de Sesión ******************************/}
             <div className="caja-sesion">
-                {/**/}
+                
                 {/*<Link to="/registro" className="enlace enlace-a-pelis-estrenos enlace-sesion" style={{ display: regVisibilidad ? '' : 'none' }}>Registro nuevo usuario</Link>*/}
-                {/**/}
 
                 <div style={{ color: 'firebrick', fontWeight: 'bold' }}>{estadoSesion}</div>
 
@@ -83,7 +84,9 @@ const ContainerGetCines = () => {
                     <Link to="/cerrar" className="enlace enlace-a-pelis-estrenos enlace-sesion" style={{ display: cerrarVisibilidad ? '' : 'none' }}>Cerrar sesión</Link>
                 </div>
             </div>
+            {/****************************** Fin Barra de Sesión ******************************/}
 
+            {/*Indicaciones*/}
             <div className="caja-indicaciones">
                 <h3 className="h3-indicaciones">Revise la cartelera y compre las entradas.</h3>
                 <p>
@@ -92,6 +95,7 @@ const ContainerGetCines = () => {
                     Después escoja un cine y compre sus entradas.
                 </p>
             </div>
+
             <div className="caja-links">
                 {/* Link a todas las películas */}
                 <Link to="/peliculas" className="enlace enlace-a-pelis-estrenos">Ver todas las películas</Link>
@@ -111,11 +115,13 @@ const ContainerGetCines = () => {
                     )
                 })}
             </div>
-            <div className="caja-links">
+
+            <div className="caja-indicaciones">
                 Sesiones para todos los cines:<br></br>
                 <br></br>
                 1ª: {primeraSesion} · · · 2ª: {segundaSesion} · · · 3ª: {terceraSesion}
             </div>
+
         </div>
     )
 

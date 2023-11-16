@@ -18,59 +18,69 @@ const ContainerPostLogin = () => {
   const [linkoperable, setLinkOperable] = useState(false);
 
   /******************* MANEJADOR DEL SUBMIT AL PULSAR EL BOTÓN *********************/
+
   const handleSubmit = async (event) => {
     //1. Evitamos el comportamiento por defecto del botón (submit)
     event.preventDefault();
 
-    // 2. Definimos los datos que queremos enviar en el cuerpo de la solicitud
+    //2. Definimos los datos que queremos enviar en el cuerpo de la solicitud
     const datos = {
       usuarioNombre,  //'Paco123'
       password,       //'Abc123'
       email,          //'paco@gmail.com'
     };
 
-    // 3. Configuramos las cabeceras de la solicitud
+    //3. Configuramos las cabeceras de la solicitud
     const config = {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
     };
-    // 4. Hacemos la petición al servidor con Axios
+
+    //4. Hacemos la petición al servidor con Axios
     axios.post('http://localhost:8000/sessions/', datos, config)
       .then((responseServ) => {
+
+        //5. Si la respuesta del servidor tiene el campo "status" con ese valor aparece "responseServ" en pantalla
         if (responseServ.data.status === "Inicio de sesión correcto, status=201") {
-          // 5. Si la respuesta del servidor tiene el campo "status" con ese valor aparece "responseServ" en pantalla
           //setResponse(JSON.stringify(response.data.status)); //('Respuesta: ' + JSON.stringify(response.data.status))
           setResponseServ(responseServ.data.status);
           console.log('Respuesta:', responseServ.data);
 
-          // 6. y guardamos el valor del campo "token" en sessionStorage
+          //5.1. Guardamos el valor del campo "token" en sessionStorage
           sessionStorage.setItem('token', responseServ.data.data.token);
           const tokenUsuActual = sessionStorage.getItem('token');
           console.log('Token actual:', tokenUsuActual);
 
-          // 7. habilitamos el Link Explorar
+          //5.2. habilitamos el Link Explorar
           setLinkOperable(true);
         }
+
+        //6. Respuesta del servidor si hay campos sin cubrir
         if (responseServ.data.status === "Hay campos sin cubrir, status=400") {
           //setResponseServ(JSON.stringify(responseServ.data));
           setResponseServ(responseServ.data.status);
         }
+
+        //7. Respuesta del servidor si el Email no está registado
         if (responseServ.data.status === "El email no está registrado, status=400") {
           setResponseServ(responseServ.data.status);
         }
-        if (responseServ.data.status === "La contraseña es incorrecta, status=400") { //no me funciona en Django
+
+        //8. Respuesta del servidor si la contraseña introducida es incorrecta -> hay que hacer que funcione en Django
+        if (responseServ.data.status === "La contraseña es incorrecta, status=400") { 
           setResponseServ(responseServ.data.status);
         }
       })
+
+      //9. Si no se produce ningún caso de los anteriores se recoge el error
       .catch((error) => {
         setResponseServ(`Error: ${error.message}`); // igual que ("Error: " + error.message)
         console.error('Error:', error);
-        // Puedes manejar los errores aquí
       });
   }
-  /*********************** Fin Manejador del submit ****************************/
+  /*********************** Fin handleSubmit - Manejador del submit ****************************/
 
   return (
     <div className='container-login'>

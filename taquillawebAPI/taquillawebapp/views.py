@@ -34,15 +34,23 @@ def nuevousuario_view(request):
 
         # a) Comprobamos que se han cubierto todos los campos
         if not all([pusuarionombre, ppassword, pemail]):
-            return HttpResponse("Hay campos sin cubrir", status=400)
+            # corregido 20231113
+            data = {
+                "status": "Hay campos sin cubrir, status=400"
+            }    
+            return JsonResponse(data, safe = False, json_dumps_params = {'ensure_ascii':False})
         # HttpResponse pág. 586
 
         # b) Comprobamos que no existe un usuario con el mismo correo
         # 1er email es el campo de la bd, el 2º es el email del request
         if Tusuarios.objects.filter(email=pemail).exists():
-            return HttpResponse("El email ya exite", status=400)
+        # corregido 20231113
+            data = {
+                "status": "El email ya exite, status=400"
+            }    
+            return JsonResponse(data, safe = False, json_dumps_params = {'ensure_ascii':False})
 
-        # Si todo funciona se crea el usuario si no devolvemos error
+        # Si todo funciona se crea el usuario si no, devolvemos error
         try:
             nuevo_usuario = Tusuarios()
             nuevo_usuario.usuarionombre = pusuarionombre

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 
 //Estilos
 import "../styles/estilosTW.css";
+//Imágenes
+import esquema from "../figuras/esquema_relacional.jpg"
 //import logoTW from "../figuras/logoTW_1000x500.jpg"
 
 const Descriptiva = (props) => {
@@ -13,12 +15,12 @@ const Descriptiva = (props) => {
     const [cerrarVisibilidad, setCerrarVisibilidad] = useState(false);
     const [linkoperable, setLinkoperable] = useState(false);
     const [estadoSesion, setEstadoSesion] = useState("Abra sesión con sus datos de usuario.");
-;
+    ;
     // Guardamos el token en una variable
     const tokenUsuActual = sessionStorage.getItem('token');
     console.log('Token actual en home: ' + tokenUsuActual);
 
-    //EFECTO PARA ESTABLECER LA VARIABLE DE ESTADO
+    //EFECTO PARA ESTABLECER LAs VARIABLEs DE ESTADO SEGÚN EL VALOR DEL TOKEN
     useEffect(() => {
         if (tokenUsuActual !== "Cerrada" && tokenUsuActual !== null) { // Al abrir Home en una pestaña nueva tockenUsuActual vale null
             // Cuando cerramos sesión y volvemos a abrirla en la misma pestaña el valor de tokenUsuActual es "Cerrada"
@@ -35,10 +37,11 @@ const Descriptiva = (props) => {
     //////// Final Ocultar - Visibilizar botones ////////
 
     return <div className="caja-links-cines">
+
+        {/****************************** Inicio Barra de Sesión ******************************/}
         <div className="caja-sesion">
-            {/**/}
+            
             <Link to="/registro" className="enlace enlace-a-pelis-estrenos enlace-sesion" style={{ display: regVisibilidad ? '' : 'none' }}>Registro nuevo usuario</Link>
-            {/**/}
 
             <div style={{ color: 'firebrick', fontWeight: 'bold' }}>{estadoSesion}</div>
 
@@ -48,36 +51,86 @@ const Descriptiva = (props) => {
                 <Link to="/cerrar" className="enlace enlace-a-pelis-estrenos enlace-sesion" style={{ display: cerrarVisibilidad ? '' : 'none' }}>Cerrar sesión</Link>
             </div>
         </div>
+        {/****************************** Fin Barra de Sesión ******************************/}
+
+        {/*Título*/}
         <div className='caja-logo-descripcion'>
-            <h3>Descripción del código fuente.</h3>
+            <h3>Descripción general de la aplicación.</h3>
         </div>
+
+        {/*Contenidos*/}
         <div className="presentacion">
-            {/*<img src={logoTW} alt="logo" title="Taquilla Web - React" className="imagen-logo" />*/}
-            <p>
-                El componente <strong>PageWithOutlet.js</strong> contiene a los componentes:<br></br>
-                - Header<br></br>
-                - Outlet<br></br>
-                - Footer<br></br>
+            
+            <h3 className='apartado'>1. Finalidad y funcionamiento de TaquillaWeb</h3>
+
+            <p>Esta práctica final de ciclo consiste en la realización del frontend para la aplicación <strong>TaquillaWeb</strong>.<br></br>
+                El backend que le da soporte está previamente realizado y para la entrega de este ejercicio solo se han modificado algunas respuestas del servidor con el fin de permitir una mejor manipulación de las mismas en la parte cliente.<br></br>
                 <br></br>
-                <strong>App.js</strong> contiene las diferentes rutas (Routes) de la aplicación en el servidor de React, todas muestran
-                al componente PageWithOutlet.<br></br>
-                Lo que varía de una ruta a otra es el componente Outlet cuya posición está ocupada por un determinado componente Route.<br></br>
-                Cada Route tiene las propiedades path y element, este último es un componente Container (el cuerpo de la página) asignado a dicho path.<br></br>
+                El fin de <strong>TaquillaWeb</strong> es permitirle al usuario inspeccionar la cartelera que ofrecen los cines que hacen uso de la aplicación y, si lo desea, comprar las entradas para la película y el cine elegidos.<br></br>
                 <br></br>
-                <strong>Header.js</strong> es el Encabezado de las páginas de la aplicación y contiene los links a las principales rutas (Routes en App.js):<br></br>
-                Productos, Categorías e Inicio.<br></br>
-                <br></br>
-                <strong>Características de los componentes Container:</strong><br></br>
-                &gt; Solo se importan en App.js pues son los componentes a los que apuntan las Routes respectivas.<br></br>
-                &gt; En cada uno de ellos:<br></br>
-                1) Se declara una variable de estado <strong><i>const [variableEst, setVariableEst] = useState(variableEstIni)</i></strong>;<br></br>
-                2) Dentro de una función <strong><i>useEffect()</i></strong>:<br></br>
-                2.1) traen datos de la API con <strong><i>axios.get("http://localhost:8000/...")</i></strong>.<br></br>
-                2.2) dentro de una función Promesa se establece el valor de la variable de estado asignándole los datos que devuelve la API con <strong><i>setVariableEst()</i></strong><br></br>
-                3) Con <strong><i>return</i></strong> devuelven un elemento &lt;div&gt; que sería el cuerpo de la página conteniendo los componentes hijo &lt;Card&gt; (a excepción de &lt;...&gt;
-                que devuelve un elemento &lt;div&gt; simple) que visibilizan la información obtenida desde la API aplicado la función .map() sobre la variable de estado <strong><i>variableEst.map()</i></strong>. En esta aplicación la variable de estado suele ser un array de objetos, por lo tanto .map() pasa mediante <strong><i>props</i></strong> cada objeto
-                del array a un componente &lt;Card&gt; que muestra los datos en la interfaz de usuario.<br></br>
+
+                Se permite el acceso libre a las páginas <strong>Presentación</strong> y <strong>Descripción del código</strong>. El acceso al resto de funcionalidades solo está permitido con el registro previo del usuario.<br></br>
             </p>
+
+            <h3 className='apartado'>2. Parte cliente</h3>
+
+            <p>La parte cliente de la aplicación está hecha con <strong>React JS</strong> y consta de las siguientes páginas:</p>
+
+            <h4 className='apartado'>2.1. Páginas de acceso libre:</h4>
+            <ul>
+                <li>Presentación (Inicio)</li>
+                <li>Descripción del código</li>
+                <li>Registro nuevo usuario</li>
+                <li>Abrir sesión</li>
+            </ul>
+
+            <h4 className='apartado'>2.1. Páginas de acceso limitado a usuarios registrados:</h4>
+            <ol>
+                <li>Presentación (como usuario registrado)</li>
+                <li>Página de Exploración, con enlaces a las siguientes:</li>
+                <ul>
+                    <li>Todas las películas</li>
+                    <li>Estrenos</li>
+                    <li>Buscador</li>
+                    <li>Películas por cine, con enlace a:</li>
+                    <ul><li>Compra de entradas</li></ul>
+                </ul>
+                <li>Cerrar sesión</li>
+            </ol>
+
+            <h3 className='apartado'>3. Parte servidor</h3>
+
+            <p>La aplicación hace uso de un servidor local <strong>Django</strong> en <strong>http://localhost:8000</strong> donde se gestionan las peticiones a los diferentes endpoints.<br></br>
+                En este servidor se encuentra la base de datos en MariaDB <strong>taquillawebbd.sql</strong> obtenida a partir de la importación de <strong>bdtaquillaweb.sql</strong> original, realizada usando phpMyAdmin</p>
+
+
+            <h4 className='apartado'>3.1. Base de datos</h4>
+
+            <p>La base de datos consta de 5 tablas:</p>
+            <ul style={{ marginTop: "auto" }}>
+                <li>tusuarios</li>
+                <li>tcines</li>
+                <li>tsalas</li>
+                <li>tpeliculas</li>
+                <li>tentradas</li>
+            </ul>
+            <p>Esquema relacional de la base de datos:</p>
+            <img src={esquema} alt="logo" title="Esquema relacional" className="imagen-esquema-relacional" />
+
+            <h4 className='apartado'>3.2. Reseña de los endpoints</h4>
+
+            <p><strong>| Funcionalidad | Nº endpoint y tipo | Endpoint |</strong><br></br></p>
+
+            <p>| Registro nuevo usuario | Endpoint 1 (POST /users)                 | <strong>http://localhost:8000/users/</strong> |</p>
+            <p>| Login de usuario       | Endpoint 2 (POST /sessions)              | <strong>http://localhost:8000/sessions/</strong> |</p>
+            <p>| Todos los cines        | Endpoint 3 (GET /cines/)                 | <strong>http://localhost:8000/cines/</strong> |</p>
+            <p>| Todas las películas    | Endpoint 4 (GET /peliculas/)             | <strong>http://localhost:8000/peliculas/</strong> |</p>
+            <p>| Película por su id     | Endpoint 5 (GET /peliculas/&lt;id&gt;)         | <strong>http://localhost:8000/peliculas/&lt;id&gt;</strong> |</p>
+            <p>| Películas por cine     | Endpoint 6 (GET cines/&lt;id&gt;/peliculas)    | <strong>http://localhost:8000/cine/&lt;id&gt;/peliculas/</strong> |</p>
+            <p>| Películas en estreno   | Endpoint 7 (GET /peliculas/estrenos)     | <strong>http://localhost:8000/peliculas/estrenos/</strong> |</p>
+            <p>| Comprar entradas       | Endpoint 8 (POST /entradas/)             | <strong>http://localhost:8000/entradas/</strong> |</p>
+            <p>| Buscador               | Endpoint 9 (GET /buscar_pelicula/&lt;cadena_solicitada&gt;/) | <strong>http://localhost:8000/buscar_pelicula/&lt;cadena_solicitada&gt;</strong>/ </p>
+
         </div>
 
     </div>

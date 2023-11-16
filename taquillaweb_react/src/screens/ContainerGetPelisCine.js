@@ -52,7 +52,7 @@ const ContainerGetPelisCine = () => {
                 {peliculas_x_cine.slice(1).map((pelicula, i) => {
                     //map ejecuta esta función sobre cada objeto cine del array respuesta y devuelve CardCine cumplimentado
                     return (
-                        <CardPeliculaPorCine key={i} proppelicula={pelicula} />
+                        <CardPeliculaPorCine key={i} proppelicula={pelicula} propidcine={parametro_id_cine} propnombrecine={parametro_nombre_cine} />
                     )
                 })}
             </div>
