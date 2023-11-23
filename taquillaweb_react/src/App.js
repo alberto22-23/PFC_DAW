@@ -13,6 +13,7 @@ import ContainerGetEstrenos from './screens/ContainerGetEstrenos';
 import ContainerGetBuscador from './screens/ContainerGetBuscador';
 import ContainerGetPelisCine from './screens/ContainerGetPelisCine';
 import ContainerGetPostCompra from './screens/ContainerGetPostCompra';
+import ContainerPostRealizarCompra from './screens/ContainerPostRealizarCompra';
 
 function App() {
   return (
@@ -30,7 +31,8 @@ function App() {
             <Route path="/estrenos" element={<ContainerGetEstrenos />}></Route>                   {/*ocupa el <Outlet />*/}
             <Route path="/buscador" element={<ContainerGetBuscador />}></Route>                   {/*ocupa el <Outlet />*/}
             <Route path="/cine/:parametro_id_cine/:parametro_nombre_cine" element={<ContainerGetPelisCine />}></Route> {/*ocupa el <Outlet />*/}
-            <Route path="/compra/:parametro_id_cine/:parametro_id_pelicula/:parametro_nombre_cine" element={<ContainerGetPostCompra />}></Route>                   {/*ocupa el <Outlet />*/}
+            <Route path="/compra/:parametro_id_cine/:parametro_id_pelicula/:parametro_nombre_cine" element={<ContainerGetPostCompra />}></Route>{/*ocupa el <Outlet />*/}
+            <Route path="/realizar-compra/:param_id_cine/:param_id_pelicula/:param_id_sala/:param_num_entradas/:param_sesion/:param_fecha/:param_num_tarjeta" element={<ContainerPostRealizarCompra />}></Route>{/*ocupa el <Outlet />*/}
             
           </Route>{/*fin path="/">*/}
         </Routes>

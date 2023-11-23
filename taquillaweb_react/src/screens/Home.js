@@ -42,7 +42,7 @@ const Home = (props) => {
         <div className="caja-sesion">
             <Link to="/registro" className="enlace enlace-a-pelis-estrenos enlace-sesion" style={{ display: regVisibilidad ? '' : 'none' }}>Registro nuevo usuario</Link>
 
-            <div style={{ color: 'firebrick', fontWeight: 'bold' }}>{estadoSesion}</div>
+            <div style={{ color: 'firebrick', fontWeight: 'bold' }}><div style={{marginLeft: 20}}>{estadoSesion}</div></div>
 
             <div className='div-abrir-cerrar'>
                 <Link to="/abrir" className="enlace enlace-a-pelis-estrenos enlace-sesion" style={{ display: abrirVisibilidad ? '' : 'none' }}>Abrir sesión</Link>
@@ -57,33 +57,31 @@ const Home = (props) => {
             <h3>Presentación.</h3>
         </div>
 
-         {/*Contenidos*/}
+        {/*Contenidos*/}
         <div className="presentacion">
 
-             {/*Bienvenida*/}
+            {/*Bienvenida*/}
             <div className="p-bienvenida" style={{ display: linkoperable ? '' : 'none' }}>
-                <p  style={{ display: linkoperable ? '' : 'none' }}>¡Bienvenid@! ¡Explore TaquillaWeb y consiga sus entradas!</p>
+                <p style={{ display: linkoperable ? '' : 'none' }}>¡Bienvenid@! ¡Explora TaquillaWeb.com y consigue tus entradas!</p>
                 <Link to="/cines-pelis-estrenos" className="btn-explorar" style={{ display: linkoperable ? '' : 'none' }}>Explorar</Link>
             </div>
 
-            {/*Textos, imágenes, etc.*/}
-            <h3 className='apartado'>1. Finalidad y funcionamiento de TaquillaWeb</h3>
-
-            <p>Esta práctica final de ciclo consiste en la realización del frontend para la aplicación <strong>TaquillaWeb</strong>.<br></br>
-                El backend que le da soporte está previamente realizado y para la entrega de este ejercicio solo se han modificado algunas respuestas del servidor con el fin de permitir una mejor manipulación de las mismas en la parte cliente.<br></br>
+            {/*Indicaciones*/}
+            <div className="caja-indicaciones">
+                <h3 className="h3-indicaciones apartado">Elige TaquillaWeb.com y disfruta del cine a lo grande.</h3>
                 <br></br>
-                El fin de <strong>TaquillaWeb</strong> es permitirle al usuario inspeccionar la cartelera que ofrecen los cines que hacen uso de la aplicación y, si lo desea, comprar las entradas para la película y el cine elegidos.<br></br>
+                <p className='p-ticket'>
+                Haz de <strong>TaquillaWeb</strong> tu aplicación favorita para la compra de entradas en tus cines preferidos.<br></br>
+                Aprovecha las ventajas de revisar la cartelera conjuntamente con independencia de la distribuidora.<br></br>
                 <br></br>
+                Desde nuestro sitio web puedes acceder cómodamente a la oferta de varias cadenas de distribución con las últimas novedades de la cartelera.<br></br>
+                <br></br>
+                Crea una cuenta de usuario en <strong>TaquillaWeb.com</strong> y aprovecha nuestras ofertas y promociones. Puedes comprar tus entradas con una antelación de hasta 7 días.<br></br>
+                <br></br>
+                <strong className='apartado'>¡Te esperamos!</strong><br></br>
+                </p>
+            </div>
 
-                Se permite el acceso libre a las páginas <strong>Presentación</strong> y <strong>Descripción del código</strong>. El acceso al resto de funcionalidades solo está permitido con el registro previo del usuario.<br></br>
-            </p>
-
-            <h3 className='apartado'>2. Parte cliente</h3>
-
-            <p>La parte cliente de la aplicación está hecha con <strong>React JS</strong> y consta de las siguientes páginas:</p>
-
-            <h4 className='apartado'>2.1. Páginas de acceso libre:</h4>
-            
         </div>
 
     </div>

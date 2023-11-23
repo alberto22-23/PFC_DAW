@@ -43,7 +43,7 @@ const Descriptiva = (props) => {
             
             <Link to="/registro" className="enlace enlace-a-pelis-estrenos enlace-sesion" style={{ display: regVisibilidad ? '' : 'none' }}>Registro nuevo usuario</Link>
 
-            <div style={{ color: 'firebrick', fontWeight: 'bold' }}>{estadoSesion}</div>
+            <div style={{ color: 'firebrick', fontWeight: 'bold' }}><div style={{marginLeft: 20}}>{estadoSesion}</div></div>
 
             <div className='div-abrir-cerrar'>
                 <Link to="/abrir" className="enlace enlace-a-pelis-estrenos enlace-sesion" style={{ display: abrirVisibilidad ? '' : 'none' }}>Abrir sesión</Link>
@@ -82,6 +82,7 @@ const Descriptiva = (props) => {
                 <li>Descripción del código</li>
                 <li>Registro nuevo usuario</li>
                 <li>Abrir sesión</li>
+                <li>Contacto</li>
             </ul>
 
             <h4 className='apartado'>2.1. Páginas de acceso limitado a usuarios registrados:</h4>

@@ -458,7 +458,7 @@ def pedir_entradas_view(request):
         
         #####---------- Cantidad entradas
         pcantidadentradas_int = int(pcantidadentradas)
-        if 1 < pcantidadentradas_int <= 5:
+        if 1 <= pcantidadentradas_int <= 5: # Corregido 20231119
             pass
         else:
             return HttpResponse("Error al introducir el número de entradas (mín.=1, máx.=5).")

@@ -23,7 +23,8 @@ const ContainerPostLogin = () => {
     //1. Evitamos el comportamiento por defecto del botón (submit)
     event.preventDefault();
 
-    //2. Definimos los datos que queremos enviar en el cuerpo de la solicitud
+    /* 2. Definimos los datos que queremos enviar en el cuerpo de la solicitud, los nombres de las variables 
+    deben coincidir con las claves de los datos en el cuerpo de la solicitud http */
     const datos = {
       usuarioNombre,  //'Paco123'
       password,       //'Abc123'

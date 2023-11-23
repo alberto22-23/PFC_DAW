@@ -76,7 +76,7 @@ const ContainerGetCines = () => {
                 
                 {/*<Link to="/registro" className="enlace enlace-a-pelis-estrenos enlace-sesion" style={{ display: regVisibilidad ? '' : 'none' }}>Registro nuevo usuario</Link>*/}
 
-                <div style={{ color: 'firebrick', fontWeight: 'bold' }}>{estadoSesion}</div>
+                <div style={{ color: 'firebrick', fontWeight: 'bold' }}><div style={{marginLeft: 20}}>{estadoSesion}</div></div>
 
                 <div className='div-abrir-cerrar'>
                     {/*<Link to="/abrir" className="enlace enlace-a-pelis-estrenos enlace-sesion" style={{ display: abrirVisibilidad ? '' : 'none' }}>Abrir sesión</Link>*/}
@@ -88,11 +88,11 @@ const ContainerGetCines = () => {
 
             {/*Indicaciones*/}
             <div className="caja-indicaciones">
-                <h3 className="h3-indicaciones">Revise la cartelera y compre las entradas.</h3>
-                <p>
-                    Puede examinar la cartelera de un vistazo, ver solo las películas en estreno o hacer una búsqueda personalizada.<br></br>
-                    <br></br>
-                    Después escoja un cine y compre sus entradas.
+                <h3 className="h3-indicaciones apartado">Revisa la cartelera y compra las entradas.</h3>
+                <p className='p-ticket'>
+                    Puedes examinar la cartelera de un vistazo, ver solo las películas en estreno o hacer una búsqueda personalizada.<br></br>
+                    ·················<br></br>
+                    Después elige un cine y compra tus entradas.
                 </p>
             </div>
 
@@ -117,9 +117,11 @@ const ContainerGetCines = () => {
             </div>
 
             <div className="caja-indicaciones">
-                Sesiones para todos los cines:<br></br>
-                <br></br>
+                
+            <h4 className="h3-indicaciones apartado">Sesiones para todos los cines:</h4>
+                <p className='p-ticket'>
                 1ª: {primeraSesion} · · · 2ª: {segundaSesion} · · · 3ª: {terceraSesion}
+                </p>
             </div>
 
         </div>
