@@ -42,7 +42,6 @@ const ContainerGetPostCompra = () => {
     const [fecha_proyeccion, setFechaProyeccion] = useState(0);
     const [num_tajeta, setNumTarjeta] = useState(0);
 
-
     const [enlace_realizar_compra, setEnlaceRealizarCompra] = useState("");
     const [linkoperable, setLinkOperable] = useState(false);
     const [aviso, setAviso] = useState("");
@@ -272,9 +271,9 @@ const ContainerGetPostCompra = () => {
 
                     <button className="enlace ancho97x100 info-compra" onClick={comprobarDatos}>Comprobar datos</button>
 
-                    <div className='div-nombre-pelicula info-compra' style={{color: 'red'}}>- {aviso} -</div>
+                    <div className='div-nombre-pelicula info-compra' style={{color: 'red'}}> {aviso} </div>
                     
-                    <div className='div-nombre-pelicula info-compra' style={{color: 'indigo', fontWeight: 'normal'}}>Comprobación datos: {parametro_id_cine_number} - {parametro_id_pelicula_number} - {sesion} - {numero_entradas} - {pelicula_sala} - {num_tajeta} - {fecha_proyeccion}</div>
+                    {/*<div className='div-nombre-pelicula info-compra' style={{color: 'indigo', fontWeight: 'normal'}}>Comprobación datos: {parametro_id_cine_number} - {parametro_id_pelicula_number} - {sesion} - {numero_entradas} - {pelicula_sala} - {num_tajeta} - {fecha_proyeccion}</div>*/}
 
                     <Link to={enlace_realizar_compra} className="enlace ancho97x100 info-compra" style={{ visibility: linkoperable ? 'visible' : 'hidden' }}>Comprar entradas</Link>
                 </div>

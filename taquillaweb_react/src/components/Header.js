@@ -23,7 +23,7 @@ const Header = () => {
             </Link>
 
             {/* /xxx: Página para posible extra */}
-            <Link to="/contacto" className="enlace ancho250x40px">
+            <Link to="/" className="enlace ancho250x40px">
                 Contacto
             </Link>
         </div>
